@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "826902088648",
+    "firebase_url": "https://musiquitagod-80698-default-rtdb.firebaseio.com",
+    "project_id": "musiquitagod-80698",
+    "storage_bucket": "musiquitagod-80698.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:826902088648:android:12b064a29019f2103d8efd",
+        "android_client_info": {
+          "package_name": "com.example.reproductordemsica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "826902088648-cm3v43e3633jh1060p62thldkjrvumr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaBMk86HWabiyDOhjCjJAS-08lgKvJGbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "826902088648-cm3v43e3633jh1060p62thldkjrvumr3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

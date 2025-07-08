@@ -1,0 +1,13 @@
+<resources>
+    <style name="Theme.ReproductorDeMusica" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/crunchy_black</item>
+        <item name="colorPrimaryVariant">@color/crunchy_black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/crunchy_orange</item>
+        <item name="android:statusBarColor">@color/crunchy_black</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/crunchy_black</item>
+    </style>
+</resources>
