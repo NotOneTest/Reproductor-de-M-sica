@@ -22,10 +22,9 @@ public class PushNotification extends FirebaseMessagingService {
     @Override
     public void onNewToken(String token) {
         super.onNewToken(token);
-        // 1) Mostrar en logcat
         Log.d(TAG, "Nuevo FCM token: " + token);
 
-        // 2) Guardar en Realtime Database bajo /tokens/{token} = true
+        // 1) Guardar en Realtime Database bajo /tokens/{token} = true
         DatabaseReference ref = FirebaseDatabase
                 .getInstance()
                 .getReference("tokens")
@@ -37,25 +36,24 @@ public class PushNotification extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        // 0) Log para depurar llegada de mensaje
         Log.d(TAG, "Llegó mensaje: " + remoteMessage.getData());
 
         // 1) Valores por defecto
         String title = "Nueva notificación";
         String body = "";
 
-        // 2) Si viene sección notification…
+        // 2) Si viene sección notification
         if (remoteMessage.getNotification() != null) {
             title = remoteMessage.getNotification().getTitle();
             body = remoteMessage.getNotification().getBody();
 
-            // 3) …o si viene solo data
+            // 3) o si viene solo data
         } else if (remoteMessage.getData().size() > 0) {
             title = remoteMessage.getData().get("title");
             body = remoteMessage.getData().get("body");
         }
 
-        // 4) Crear canal (Android O+)
+        // 4) Crear canal
         NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
@@ -77,7 +75,7 @@ public class PushNotification extends FirebaseMessagingService {
         // 6) Construir y mostrar notificación
         Uri defaultSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder nb = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_music_note)  // o tu ic_notification
+                .setSmallIcon(R.drawable.ic_music_note)
                 .setContentTitle(title)
                 .setContentText(body)
                 .setAutoCancel(true)

@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
 
-        // Ya no comprobamos aquí auth.getCurrentUser()
 
         btnLogin.setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
